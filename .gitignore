@@ -1,0 +1,12 @@
+.env
+env.example
+vol/log/
+vol/certs/
+vol/html/
+vol/mysql/
+*.code-workspace
+apache/apache-cont1/entrypoint-var.env
+certs/cert.pem
+certs/chain.pem
+certs/fullchain.pem
+certs/privkey.pem

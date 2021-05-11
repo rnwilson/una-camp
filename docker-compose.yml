@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+    apache1:
+        build: 
+            context: ./apache/apache-cont1
+        ports:
+            - 80:80
+            - 443:443
+        volumes: 
+            - ./vol/logs/:/var/www/logs/
+            - ./vol/html/:/var/www/html/
+            - ./vol/certs/:/var/www/certs/  
+        restart: always
+        networks:
+            - backend
+            - frontend
+        hostname: apache1
+        depends_on:
+            - mysql
+        container_name: una-apache1-cont
+    
+    mysql:
+        image: mysql:5.7
+        hostname: mysql
+        networks:
+            - backend
+        env_file: .env
+        environment:
+            MYSQL_USER: "${MYSQL_USER}"
+            MYSQL_PASSWORD: "${MYSQL_PASS}"   
+            MYSQL_DATABASE: "${MYSQL_NAME}"
+            MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT}"
+        volumes:
+            - ./vol/mysql/db/:/var/lib/mysql/
+        container_name: una-mysql-cont
+
+    
+
+networks:
+    backend:
+        name: backend
+        external: false
+    frontend:
+        name: frontend
+        external: true
