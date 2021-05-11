@@ -15,7 +15,7 @@ has_error() {
     exit 1
 }
 
-DOTENV="env.example"
+DOTENV=".env.example"
 
 if [ -f "$PWD/$DOTENV" ]; then
     if [ ! -f "$PWD/apache/apache-cont1/entrypoint-var.env" ]; then
