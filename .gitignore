@@ -1,6 +1,6 @@
 .env
 env.example
-vol/log/
+vol/logs/
 vol/certs/
 vol/html/
 vol/mysql/
