@@ -15,7 +15,7 @@ This has only been tested with the [base](https://github.com/unaio/una) UNA stac
   
    **`chmod +x builder.sh && ./builder.sh`**  
    
-3. Add DNS entries and generate SSL Certificates if you have not already done so. The hostname for the Apache server is **apache1** but you can change this to whatever you would like. **(cert1.pem, chain1.pem, fullchain1.pem, privkey1.pem)**
+3. Add DNS entries and generate SSL Certificates if you have not already done so. The hostname for the Apache server is **apache1** but you can change this to whatever you would like. **(cert.pem, chain.pem, fullchain.pem, privkey.pem)**
    
 4. Run:
    
