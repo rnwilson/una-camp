@@ -27,10 +27,10 @@ services:
             - backend
         env_file: .env
         environment:
-            MYSQL_USER: "${MYSQL_USER}"
-            MYSQL_PASSWORD: "${MYSQL_PASS}"   
-            MYSQL_DATABASE: "${MYSQL_NAME}"
-            MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT}"
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASS}
+            - MYSQL_DATABASE=${MYSQL_NAME}
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT}
         volumes:
             - ./vol/mysql/db/:/var/lib/mysql/
         container_name: una-mysql-cont
